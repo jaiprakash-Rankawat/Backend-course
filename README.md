@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Q1. What is Http Method?
 
-## Getting Started
+    1. Get - Help in Getting Data
+    2. Post - Help in Adding Data
+    3. patch - Help in Updating Data
+    4. Delete - Help in Deleting Data
 
-First, run the development server:
+### Note1 : Use route.ts or route.js for backend
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Note2 : Frontend and Backend cannot use in same file
+
+# Q2 : How many function can we use in page.tsx.
+
+# Q3. What is Json and json.stringify ?
+
+# Q4. How to Get Data ?
+
+1.  plain text
+2.  json
+
+```jsx
+export async function GET() {
+  return new Response("Rahda Rani");
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Q5. difference between new Response and Response.json()
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```jsx
+return Response.json({ name: "Radha Rani" });
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Q6. what is Response ?
 
-## Learn More
+```jsx
+new Response(body, options);
+```
 
-To learn more about Next.js, take a look at the following resources:
+- What is body and options ?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```jsx
+return new Response(JSON.stringify({ message: "Radha Rani" }), {
+  status: 200,
+  headers: {
+    "Content-Type": "application/json", // Tells browser it's JSON
+    "Cache-Control": "no-store", // Don’t cache it
+  },
+});
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 📘 Common HTTP Status Codes
 
-## Deploy on Vercel
+| Code  | Meaning                  | Example Use                                            |
+| ----- | ------------------------ | ------------------------------------------------------ |
+| `200` | ✅ OK                    | Everything worked perfectly                            |
+| `201` | ✅ Created               | New record created successfully (like user or product) |
+| `400` | ⚠️ Bad Request           | The client sent invalid data                           |
+| `401` | 🔒 Unauthorized          | Authentication required or failed                      |
+| `403` | 🚫 Forbidden             | User is not allowed to access this resource            |
+| `404` | ❌ Not Found             | Resource doesn’t exist                                 |
+| `500` | 💥 Internal Server Error | Something went wrong on the server                     |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Q7. How to post Data ?
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```jsx
+export async function POST(req: Request) {
+  let student = await req.json();
+
+  const newStudent = { ...student };
+
+  child.push(newStudent);
+
+  return new Response(JSON.stringify(child));
+}
+```
+
+# Q8 . How to use dynamic route in backend ?
+
+# Q9. patch and delete ?
+
+# Q10. header and cookies ?
+
+# Q11. dynamic route
+
+<!-- postman complete  -->
+
+<!-- # moongoose -->

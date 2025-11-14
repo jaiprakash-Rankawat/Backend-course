@@ -7,8 +7,9 @@ export async function POST(req: Request) {
   let person = await req.json();
 
   const newStudent = { ...person };
+
   student.push(newStudent);
-  return new Response(JSON.stringify({ message: "Data Added" }));
+  return new Response(JSON.stringify(student));
 }
 
 // postman

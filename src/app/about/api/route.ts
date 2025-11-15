@@ -3,15 +3,24 @@ export async function GET() {
   return new Response(JSON.stringify(student));
 }
 
+// export async function POST(req: Request) {
+//   let person = await req.json();
+
+//   const newStudent = { ...person };
+//   person.name = "jai";
+
+//   student.push(newStudent);
+//   // student.push(person);
+//   return new Response(JSON.stringify(student));
+// }
 export async function POST(req: Request) {
   let person = await req.json();
-
-  const newStudent = { ...person };
-
-  student.push(newStudent);
+  person.name = "jai";
+  student.push(person);
+  // student.push(person);
   return new Response(JSON.stringify(student));
 }
-
+//
 // postman
 // thunder client
 
